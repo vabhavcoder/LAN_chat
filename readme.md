@@ -23,9 +23,9 @@ To build and run this project, you need:
 Clone the repository and compile the project using CMake:
 
 ```bash
-git clone [https://github.com/YOUR_USERNAME/Cpp-LAN-Chat.git](https://github.com/YOUR_USERNAME/Cpp-LAN-Chat.git)
-cd Cpp-LAN-Chat
-mkdir build
+git clone https://github.com/vabhavcoder/LAN_chat.git
+cd LAN_Chat
 cd build
 cmake ..
 make
+./client

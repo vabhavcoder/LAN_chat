@@ -39,7 +39,8 @@ void handle_client(int client_socket) {
     std::cout << "\n[" << username << "] joined the chat!" << std::endl;
     
     // Announce to everyone that a new user joined
-    std::string join_msg = "\n*** " + username + " has joined the chat! ***\nYou: ";
+    // Yellow for system announcements
+    std::string join_msg = "\n\033[33m*** " + username + " has joined the chat! ***\033[0m\nYou: ";
     broadcast_message(join_msg, client_socket);
     
     char buffer[1024]; 
@@ -52,12 +53,14 @@ void handle_client(int client_socket) {
             std::cout << "[" << username << "]: " << buffer << std::endl;
             
             // --- NEW: Attach their username to their messages ---
-            std::string msg_to_send = "\r" + username + ": " + std::string(buffer) + "\n";
+            // Cyan for the username, followed by a Reset for the actual message text
+            std::string msg_to_send = "\r\033[36m" + username + ": \033[0m" + std::string(buffer) + "\n";
             broadcast_message(msg_to_send, client_socket);
         } 
         else {
             std::cout << "[" << username << "] disconnected." << std::endl;
-            std::string leave_msg = "\n*** " + username + " has left the chat. ***\nYou: ";
+            // Yellow for system announcements
+            std::string leave_msg = "\n\033[33m*** " + username + " has left the chat. ***\033[0m\nYou: ";
             broadcast_message(leave_msg, client_socket);
             break; 
         }
