@@ -1,0 +1,4 @@
+/home/wolf/LAN_chat/build/CMakeFiles/LAN_chat.dir
+/home/wolf/LAN_chat/build/CMakeFiles/client.dir
+/home/wolf/LAN_chat/build/CMakeFiles/edit_cache.dir
+/home/wolf/LAN_chat/build/CMakeFiles/rebuild_cache.dir
